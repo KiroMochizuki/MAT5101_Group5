@@ -1,0 +1,68 @@
+---
+title: "Problem Set 2"
+author:
+- Byron Ralph Boter
+- Nhemuel Robles
+- Giovanni Ross Sucalit
+date: "2024-02-25"
+output:
+  pdf_document: default
+  word_document: default
+header-includes: |
+  \usepackage{graphicx}
+  \graphicspath{ {figures/} }
+  \usepackage{array}
+  \usepackage{amsmath}
+  \usepackage{xcolor}
+  \usepackage{bigints}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Problem Set 2
+
+$\textcolor{blue}{1.}$ Use the bisection method with a hand calculator or computer to find the real root of $x^{3} - x - 3 = 0$. Use an error tolerance of $\epsilon = 0.0001$. Graph the function $f(x) = x^{3} - x - 3$ and label the root.
+
+$\textcolor{blue}{2.}$ The function $f(x) = -3x^{3} + 2e^{\frac{x^{2}}{2}} - 1$ has values of zero near $x = -0.5$ and $x = 0.5$.
+
+  $\textcolor{blue}{a.}$ What is the derivative of $f$?
+  
+  $\textcolor{blue}{b.}$ If you begin Newton's method at $x = 0$, which root is reached? How many iterations to achieve an error less than $10^{-5}$?
+  
+  $\textcolor{blue}{c.}$ Begin Newton's method at another starting point to get the other zero.
+  
+$\textcolor{blue}{3.}$ Use the function from no.2 and find the root using the secant method where $x_{0} = 0$ and $x_{1} = 1$. Use an error tolerance of $\epsilon = 0.001$.
+
+$\textcolor{blue}{4.}$ Consider the system
+
+$$10.2x + 2.4y - 4.5z = 14.067,$$
+
+$$-2.3x - 7.7y + 11.1z = -0.996,$$
+
+$$-5.5x - 3.2x + 0.9z = -12.645.$$
+  
+  $\textcolor{blue}{a.}$ Present the augmented matrix of the system.
+  
+  $\textcolor{blue}{b.}$ Solve the system using $A_{x} = LU_{x} = L_{y} = b$ and round the final answer to 4 decimal digits.
+  
+  $\textcolor{blue}{c.}$ Find the residual vector if the correct solution is $x = 1.4531001$, $y = -1.5891949$, $z = -0.2748947$.
+  
+$\textcolor{blue}{5.}$ Compute the Frobenius norm, maximum column sum, and maximum row sum of the matrix:
+
+  $$\begin{pmatrix}
+      10.2 & 2.4 & 4.5\\
+      -2.3 & 7.7 & 11.1\\
+      -5.5 & -3.2 & 0.9
+    \end{pmatrix}
+  $$
+  
+  $\textcolor{blue}{6.}$ Solve the system of equations given in no. 4, starting with the initial vector of $[0,0,0]$:
+  
+  $\textcolor{blue}{a.}$ Solve using the Jacobi method with 2-digit precision.
+  
+  $\textcolor{blue}{b.}$ Solve using Gauss-Seidel method with 2-digit precision.
+  
+  $\textcolor{blue}{c.}$ Solve for $e$ if the true solution is $x = (1.5, 0.33, 0.45)^{T}$.
+  
