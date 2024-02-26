@@ -26,4 +26,4 @@ abline(h=0)
 f = function(x) {x^3 - x - 3}
 curve(f, from=0, to=3, xlab='x', ylab='f(x)', col='red')
 abline(h=0)
-bi = bisection(f, 1.5, 2.0, tol = 0.0001, m=14)
+bi = bisection(f, 1.5, 2.0, tol = 0.0001, m=13)
