@@ -477,16 +477,75 @@ $$
 -5.5 & -3.2 & 0.9
 \end{pmatrix}
 $$
-  The Frobenius norm is defined as the square root of the sum of the squares of all the matrix elements. Solving for the Frobenius norm of the given matrix:
+  The Frobenius norm is defined as the square root of the sum of the squares of all the matrix elements. 
+
+  * **Step 1**: Solving for the Frobenius norm of the given matrix:
   
   $$||A||_f = \sqrt{10.2^2 + 2.4^2 + 4.5^2 + -2.3^2 + 7.7^2 + 11.1^2 + -5.5^2 + -3.2^2 + 0.9^2}$$
   $$||A||_f = \sqrt{104.04 + 5.76 + 20.25 + 5.29 + 59.29 + 123.21 + 30.25 + 10.24 + 0.81}$$
   $$||A||_f = \sqrt{359.14}$$
   $$||A||_f = 18.9509894201$$
-  The maximum column sum, ||A||_1, of the matrix is the largest sum of each column.
-  $$||A||_1 = 18$$
-  The maximum row sum, ||A||_\infty, of the matrix is the largest sum of each row.
-  $$||A||_\infty = 21.1$$
+
+
+  * **Step 2**: Solving for the maximum column sum:
+  
+  * **Step 2a**: Getting the maximum column sum for column 1:
+  
+  $$
+    ||A||_{1}= |10.2| + |-2.3| + |-5.5|
+  $$
+  $$
+    ||A||_{1}= 18
+  $$
+  
+  * **Step 2b**: Getting the maximum column sum for column 2:
+  
+  $$
+    ||A||_{1}= |2.4| + |7.7| + |-3.2|
+  $$
+  $$
+    ||A||_{1}= 13.3
+  $$
+  
+  * **Step 2c**: Getting the maximum column sum for column 3:
+  
+  $$
+    ||A||_{1}= |4.5| + |11.1| + |0.9|
+  $$
+  $$
+    ||A||_{1}= 16.5
+  $$
+  * Since column 1 has the highest value, the maximum column sum of A is $\colorbox{green}{18}$.
+  
+  * **Step 3**: Solving for the maximum row sum:
+  
+  * **Step 3a**: Getting the maximum row sum for row 1:
+  
+  $$
+    ||A||_{\infty}= |10.2| + |2.4| + |4.5|
+  $$
+  $$
+    ||A||_{\infty}= 17.1
+  $$
+  
+  * **Step 3b**: Getting the maximum row sum for row 2:
+  
+  $$
+    ||A||_{\infty}= |-2.3| + |7.7| + |11.1|
+  $$
+  $$
+    ||A||_{\infty}= 21.1
+  $$
+  
+  * **Step 3c**: Getting the maximum row sum for row 3:
+  
+  $$
+    ||A||_{\infty}= |-5.5| + |-3.2| + |0.9|
+  $$
+  $$
+    ||A||_{\infty}= 9.6
+  $$
+  * Since row 2 has the highest value, the maximum row sum of A is $\colorbox{green}{21.1}$.
   
   $\textcolor{blue}{6.}$ Solve the system of equations given in no. 4, starting with the initial vector of $[0,0,0]$:
   
