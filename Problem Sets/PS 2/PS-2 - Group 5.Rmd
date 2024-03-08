@@ -82,6 +82,52 @@ $$\includegraphics{newton_table3}$$
   
 $\textcolor{blue}{3.}$ Use the function from no.2 and find the root using the secant method where $x_{0} = 0$ and $x_{1} = 1$. Use an error tolerance of $\epsilon = 0.001$.
 
+* **Step 1**: The graph below is generated using R, and illustrates the function $-3x^3 + 2e^\frac{x^2}{2} - 1$, starting from $x_{0} = 0$ to $x_{1} = 1$:
+
+$$\includegraphics{graph2}$$
+
+* **Step 2**: Use the general iterative formula for the secant method $x_{n+1} = x_{n}-f(x_{n}) \ \cdot \ \frac{x_{n} - x_{n-1}}{f(x_{n})-f(x_{n-1})}$ to solve for the root.
+
+* **Step 2a**: 1st iteration ($n = 1$, $x_{n} = 1$, $x_{n-1} = 0$):
+
+$$x_{n+1} = x_{n}-f(x_{n}) \ \cdot \ \frac{x_{n} - x_{n-1}}{f(x_{n})-f(x_{n-1})}$$
+
+$$x_{2} = 1-f(1) \ \cdot \ \frac{1 - 0}{f(1)-f(0)}$$
+
+$$x_{2} = 1 - (-0.7025575) \ \cdot \ \frac{1 - 0}{-0.7025575 - 1}$$
+
+$$x_{2} = 0.587351689629578$$
+
+* **Step 2b**: 2nd iteration ($n = 2$, $x_{n} = 0.587351689629578$, $x_{n-1} = 1$):
+
+$$x_{3} = x_{2}-f(x_{2}) \ \cdot \ \frac{x_{2} - x_{2-1}}{f(x_{2})-f(x_{2-1})}$$
+
+$$x_{3} = 0.802944079420674$$
+
+* **Step 2c**: 3rd iteration ($n = 3$, $x_{n} = 0.802944079420674$, $x_{n-1} = 0.587351689629578$):
+
+$$x_{3+1} = x_{3}-f(x_{3}) \ \cdot \ \frac{x_{3} - x_{3-1}}{f(x_{3})-f(x_{3-1})}$$
+
+$$x_{4} = 0.882793045552439$$
+
+* **Step 2d**: 4th iteration ($n = 4$, $x_{n} = 0.882793045552439$, $x_{n-1} = 0.802944079420674$):
+
+$$x_{4+1} = x_{4}-f(x_{4}) \ \cdot \ \frac{x_{4} - x_{4-1}}{f(x_{4})-f(x_{4-1})}$$
+
+$$x_{5} = 0.854989104029943$$
+
+* **Step 2e**: 5th iteration ($n = 5$, $x_{n} = 0.854989104029943$, $x_{n-1} = 0.882793045552439$):
+
+$$x_{5+1} = x_{5}-f(x_{5}) \ \cdot \ \frac{x_{5} - x_{5-1}}{f(x_{5})-f(x_{5-1})}$$
+
+$$x_{6} = 0.856742662921425$$
+
+* **Step 2f**: 6th iteration ($n = 6$, $x_{n} = 0.856742662921425$, $x_{n-1} = 0.854989104029943$):
+
+$$x_{6+1} = x_{6}-f(x_{6}) \ \cdot \ \frac{x_{6} - x_{6-1}}{f(x_{6})-f(x_{6-1})}$$
+
+$$x_{7} = 0.856800739647502$$
+
 $\textcolor{blue}{4.}$ Consider the system
 
 $$10.2x + 2.4y - 4.5z = 14.067,$$
