@@ -439,7 +439,7 @@ $$
   $$||A||_f = 18.9509894201$$
   The maximum column sum, ||A||_1, of the matrix is the largest sum of each column.
   $$||A||_1 = 18$$
-  The maximum row sum, ||A||_\infty, of the matrix is the largest sum of each row.
+  The maximum row sum, ||A||_$\infty$, of the matrix is the largest sum of each row.
   $$||A||_\infty = 21.1$$
   
   $\textcolor{blue}{6.}$ Solve the system of equations given in no. 4, starting with the initial vector of $[0,0,0]$:
