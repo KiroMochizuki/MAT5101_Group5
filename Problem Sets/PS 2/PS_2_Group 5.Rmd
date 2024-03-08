@@ -16,7 +16,6 @@ header-includes: |
   \usepackage{amsmath}
   \usepackage{xcolor}
   \usepackage{bigints}
-  
   \graphicspath{ {./images/} }
 ---
 
@@ -549,9 +548,282 @@ $$
   
   $\textcolor{blue}{6.}$ Solve the system of equations given in no. 4, starting with the initial vector of $[0,0,0]$:
   
-  $\textcolor{blue}{a.}$ Solve using the Jacobi method with 2-digit precision.
+  $\textcolor{blue}{a.}$ Solve using the Jacobi method with 2-digit precision
+```{r}  
+library(matlib)
+A=matrix(c(10.2,2.4,-4.5,-2.3,-7.7,11.1,-5.5,-3.2,0.9), nrow = 3, byrow = T)
+b=matrix(c(14.067,-0.996,-12.645), nrow = 3, byrow = T)
+solve(A,b)
+```
+  
+```{r}
+  L=matrix(c(0.0,0.0,0.0,-2.3,0.0,0.0,-5.5,-3.2,0.0), nrow = 3, byrow = T)
+  D=matrix(c(10.2,0.0,0.0,0.0,-7.7,0.0,0.0,0.0,0.9), nrow = 3, byrow = T)
+  U=matrix(c(0.0,2.4,-4.5,0.0,0.0,11.1,0.0,0.0,0.0), nrow = 3, byrow = T)
+  b=matrix(c(14.067,-0.996,-12.645),nrow = 3, byrow = T)
+  x0=matrix(c(0,0,0), nrow = 3, byrow = T)
+  x1=(-inv(D))%*%(L+U)%*%x0+inv(D)%*%b
+  x1
+  d1 = inv(D)
+  d1
+```
+```{r}
+  L=matrix(c(0,0,0,-2.3,0,0,-5.5,-3.2,0), nrow = 3, byrow = T)
+  D=matrix(c(10.2,0,0,0,-7.7,0,0,0,0.9), nrow = 3, byrow = T)
+  U=matrix(c(0,2.4,-4.5,0,0,11.1,0,0,0), nrow = 3, byrow = T)
+  b=matrix(c(14.067,-0.996,-12.645),nrow = 3, byrow = T)
+  x2=(-inv(D))%*%(L+U)%*%x1+inv(D)%*%b
+  x2
+```
+```{r}
+  L=matrix(c(0,0,0,-2.3,0,0,-5.5,-3.2,0), nrow = 3, byrow = T)
+  D=matrix(c(10.2,0,0,0,-7.7,0,0,0,0.9), nrow = 3, byrow = T)
+  U=matrix(c(0,2.4,-4.5,0,0,11.1,0,0,0), nrow = 3, byrow = T)
+  b=matrix(c(14.067,-0.996,-12.645),nrow = 3, byrow = T)
+  x3=(-inv(D))%*%(L+U)%*%x2+inv(D)%*%b
+  x3
+```
+```{r}
+  L=matrix(c(0,0,0,-2.3,0,0,-5.5,-3.2,0), nrow = 3, byrow = T)
+  D=matrix(c(10.2,0,0,0,-7.7,0,0,0,0.9), nrow = 3, byrow = T)
+  U=matrix(c(0,2.4,-4.5,0,0,11.1,0,0,0), nrow = 3, byrow = T)
+  b=matrix(c(14.067,-0.996,-12.645),nrow = 3, byrow = T)
+  x4=(-inv(D))%*%(L+U)%*%x3+inv(D)%*%b
+  x4
+```
+```{r}
+  L=matrix(c(0,0,0,-2.3,0,0,-5.5,-3.2,0), nrow = 3, byrow = T)
+  D=matrix(c(10.2,0,0,0,-7.7,0,0,0,0.9), nrow = 3, byrow = T)
+  U=matrix(c(0,2.4,-4.5,0,0,11.1,0,0,0), nrow = 3, byrow = T)
+  b=matrix(c(14.067,-0.996,-12.645),nrow = 3, byrow = T)
+  x5=(-inv(D))%*%(L+U)%*%x4+inv(D)%*%b
+  x5
+```
+```{r}
+  L=matrix(c(0,0,0,-2.3,0,0,-5.5,-3.2,0), nrow = 3, byrow = T)
+  D=matrix(c(10.2,0,0,0,-7.7,0,0,0,0.9), nrow = 3, byrow = T)
+  U=matrix(c(0,2.4,-4.5,0,0,11.1,0,0,0), nrow = 3, byrow = T)
+  b=matrix(c(14.067,-0.996,-12.645),nrow = 3, byrow = T)
+  x6=(-inv(D))%*%(L+U)%*%x5+inv(D)%*%b
+  x6
+```
+```{r}
+  L=matrix(c(0,0,0,-2.3,0,0,-5.5,-3.2,0), nrow = 3, byrow = T)
+  D=matrix(c(10.2,0,0,0,-7.7,0,0,0,0.9), nrow = 3, byrow = T)
+  U=matrix(c(0,2.4,-4.5,0,0,11.1,0,0,0), nrow = 3, byrow = T)
+  b=matrix(c(14.067,-0.996,-12.645),nrow = 3, byrow = T)
+  x7=(-inv(D))%*%(L+U)%*%x6+inv(D)%*%b
+  x7
+```
+```{r}
+  L=matrix(c(0,0,0,-2.3,0,0,-5.5,-3.2,0), nrow = 3, byrow = T)
+  D=matrix(c(10.2,0,0,0,-7.7,0,0,0,0.9), nrow = 3, byrow = T)
+  U=matrix(c(0,2.4,-4.5,0,0,11.1,0,0,0), nrow = 3, byrow = T)
+  b=matrix(c(14.067,-0.996,-12.645),nrow = 3, byrow = T)
+  x8=(-inv(D))%*%(L+U)%*%x7+inv(D)%*%b
+  x8
+```
+```{r}
+  L=matrix(c(0,0,0,-2.3,0,0,-5.5,-3.2,0), nrow = 3, byrow = T)
+  D=matrix(c(10.2,0,0,0,-7.7,0,0,0,0.9), nrow = 3, byrow = T)
+  U=matrix(c(0,2.4,-4.5,0,0,11.1,0,0,0), nrow = 3, byrow = T)
+  b=matrix(c(14.067,-0.996,-12.645),nrow = 3, byrow = T)
+  x9=(-inv(D))%*%(L+U)%*%x8+inv(D)%*%b
+  x9
+```
+```{r}
+  L=matrix(c(0,0,0,-2.3,0,0,-5.5,-3.2,0), nrow = 3, byrow = T)
+  D=matrix(c(10.2,0,0,0,-7.7,0,0,0,0.9), nrow = 3, byrow = T)
+  U=matrix(c(0,2.4,-4.5,0,0,11.1,0,0,0), nrow = 3, byrow = T)
+  b=matrix(c(14.067,-0.996,-12.645),nrow = 3, byrow = T)
+  x10=(-inv(D))%*%(L+U)%*%x9+inv(D)%*%b
+  x10
+```
+```{r}
+  L=matrix(c(0,0,0,-2.3,0,0,-5.5,-3.2,0), nrow = 3, byrow = T)
+  D=matrix(c(10.2,0,0,0,-7.7,0,0,0,0.9), nrow = 3, byrow = T)
+  U=matrix(c(0,2.4,-4.5,0,0,11.1,0,0,0), nrow = 3, byrow = T)
+  b=matrix(c(14.067,-0.996,-12.645),nrow = 3, byrow = T)
+  x11=(-inv(D))%*%(L+U)%*%x10+inv(D)%*%b
+  x11
+```
+
+```{r}
+  L=matrix(c(0,0,0,-2.3,0,0,-5.5,-3.2,0), nrow = 3, byrow = T)
+  D=matrix(c(10.2,0,0,0,-7.7,0,0,0,0.9), nrow = 3, byrow = T)
+  U=matrix(c(0,2.4,-4.5,0,0,11.1,0,0,0), nrow = 3, byrow = T)
+  b=matrix(c(14.067,-0.996,-12.645),nrow = 3, byrow = T)
+  x12=(-inv(D))%*%(L+U)%*%x11+inv(D)%*%b
+  x12
+```
+```{r}
+  L=matrix(c(0,0,0,-2.3,0,0,-5.5,-3.2,0), nrow = 3, byrow = T)
+  D=matrix(c(10.2,0,0,0,-7.7,0,0,0,0.9), nrow = 3, byrow = T)
+  U=matrix(c(0,2.4,-4.5,0,0,11.1,0,0,0), nrow = 3, byrow = T)
+  b=matrix(c(14.067,-0.996,-12.645),nrow = 3, byrow = T)
+  x13=(-inv(D))%*%(L+U)%*%x12+inv(D)%*%b
+  x13
+```
+```{r}
+  L=matrix(c(0,0,0,-2.3,0,0,-5.5,-3.2,0), nrow = 3, byrow = T)
+  D=matrix(c(10.2,0,0,0,-7.7,0,0,0,0.9), nrow = 3, byrow = T)
+  U=matrix(c(0,2.4,-4.5,0,0,11.1,0,0,0), nrow = 3, byrow = T)
+  b=matrix(c(14.067,-0.996,-12.645),nrow = 3, byrow = T)
+  x14=(-inv(D))%*%(L+U)%*%x13+inv(D)%*%b
+  x14
+```
+```{r}
+  L=matrix(c(0,0,0,-2.3,0,0,-5.5,-3.2,0), nrow = 3, byrow = T)
+  D=matrix(c(10.2,0,0,0,-7.7,0,0,0,0.9), nrow = 3, byrow = T)
+  U=matrix(c(0,2.4,-4.5,0,0,11.1,0,0,0), nrow = 3, byrow = T)
+  b=matrix(c(14.067,-0.996,-12.645),nrow = 3, byrow = T)
+  x15=(-inv(D))%*%(L+U)%*%x14+inv(D)%*%b
+  x15
+```
+```{r}
+  L=matrix(c(0,0,0,-2.3,0,0,-5.5,-3.2,0), nrow = 3, byrow = T)
+  D=matrix(c(10.2,0,0,0,-7.7,0,0,0,0.9), nrow = 3, byrow = T)
+  U=matrix(c(0,2.4,-4.5,0,0,11.1,0,0,0), nrow = 3, byrow = T)
+  b=matrix(c(14.067,-0.996,-12.645),nrow = 3, byrow = T)
+  x16=(-inv(D))%*%(L+U)%*%x15+inv(D)%*%b
+  x16
+```
+```{r}
+  L=matrix(c(0,0,0,-2.3,0,0,-5.5,-3.2,0), nrow = 3, byrow = T)
+  D=matrix(c(10.2,0,0,0,-7.7,0,0,0,0.9), nrow = 3, byrow = T)
+  U=matrix(c(0,2.4,-4.5,0,0,11.1,0,0,0), nrow = 3, byrow = T)
+  b=matrix(c(14.067,-0.996,-12.645),nrow = 3, byrow = T)
+  x17=(-inv(D))%*%(L+U)%*%x16+inv(D)%*%b
+  x17
+```
+```{r}
+  L=matrix(c(0,0,0,-2.3,0,0,-5.5,-3.2,0), nrow = 3, byrow = T)
+  D=matrix(c(10.2,0,0,0,-7.7,0,0,0,0.9), nrow = 3, byrow = T)
+  U=matrix(c(0,2.4,-4.5,0,0,11.1,0,0,0), nrow = 3, byrow = T)
+  b=matrix(c(14.067,-0.996,-12.645),nrow = 3, byrow = T)
+  x18=(-inv(D))%*%(L+U)%*%x17+inv(D)%*%b
+  x18
+```
+```{r}
+  L=matrix(c(0,0,0,-2.3,0,0,-5.5,-3.2,0), nrow = 3, byrow = T)
+  D=matrix(c(10.2,0,0,0,-7.7,0,0,0,9), nrow = 3, byrow = T)
+  U=matrix(c(0,2.4,-4.5,0,0,11.1,0,0,0), nrow = 3, byrow = T)
+  b=matrix(c(14.067,-0.996,-12.645),nrow = 3, byrow = T)
+  x19=(-inv(D))%*%(L+U)%*%x18+inv(D)%*%b
+  x19
+```
+```{r}
+  L=matrix(c(0,0,0,-2.3,0,0,-5.5,-3.2,0), nrow = 3, byrow = T)
+  D=matrix(c(10.2,0,0,0,-7.7,0,0,0,9), nrow = 3, byrow = T)
+  U=matrix(c(0,2.4,-4.5,0,0,11.1,0,0,0), nrow = 3, byrow = T)
+  b=matrix(c(14.067,-0.996,-12.645),nrow = 3, byrow = T)
+  x20=(-inv(D))%*%(L+U)%*%x19+inv(D)%*%b
+  x20
+```
   
   $\textcolor{blue}{b.}$ Solve using Gauss-Seidel method with 2-digit precision.
   
+```{r}
+  L=matrix(c(0.0,0.0,0.0,-2.3,0.0,0.0,-5.5,-3.2,0.0), nrow = 3, byrow = T)
+  D=matrix(c(10.2,0.0,0.0,0.0,-7.7,0.0,0.0,0.0,0.9), nrow = 3, byrow = T)
+  U=matrix(c(0.0,2.4,-4.5,0.0,0.0,11.1,0.0,0.0,0.0), nrow = 3, byrow = T)
+  b=matrix(c(14.067,-0.996,-12.645),nrow = 3, byrow = T)
+  x0=matrix(c(0,0,0), nrow = 3, byrow = T)
+ x1=(-1*inv(L+D))%*%U%*%x0+inv(L+D)%*%b
+x1
+A==L+D+U
+```
+```{r}
+  L=matrix(c(0.0,0.0,0.0,-2.3,0.0,0.0,-5.5,-3.2,0.0), nrow = 3, byrow = T)
+  D=matrix(c(10.2,0.0,0.0,0.0,-7.7,0.0,0.0,0.0,0.9), nrow = 3, byrow = T)
+  U=matrix(c(0.0,2.4,-4.5,0.0,0.0,11.1,0.0,0.0,0.0), nrow = 3, byrow = T)
+  b=matrix(c(14.067,-0.996,-12.645),nrow = 3, byrow = T)
+  x0=matrix(c(0,0,0), nrow = 3, byrow = T)
+ x2=(-1*inv(L+D))%*%U%*%x1+inv(L+D)%*%b
+x2
+```
+```{r}
+  L=matrix(c(0.0,0.0,0.0,-2.3,0.0,0.0,-5.5,-3.2,0.0), nrow = 3, byrow = T)
+  D=matrix(c(10.2,0.0,0.0,0.0,-7.7,0.0,0.0,0.0,0.9), nrow = 3, byrow = T)
+  U=matrix(c(0.0,2.4,-4.5,0.0,0.0,11.1,0.0,0.0,0.0), nrow = 3, byrow = T)
+  b=matrix(c(14.067,-0.996,-12.645),nrow = 3, byrow = T)
+  x0=matrix(c(0,0,0), nrow = 3, byrow = T)
+ x3=(-1*inv(L+D))%*%U%*%x2+inv(L+D)%*%b
+x3
+```
+```{r}
+  L=matrix(c(0.0,0.0,0.0,-2.3,0.0,0.0,-5.5,-3.2,0.0), nrow = 3, byrow = T)
+  D=matrix(c(10.2,0.0,0.0,0.0,-7.7,0.0,0.0,0.0,0.9), nrow = 3, byrow = T)
+  U=matrix(c(0.0,2.4,-4.5,0.0,0.0,11.1,0.0,0.0,0.0), nrow = 3, byrow = T)
+  b=matrix(c(14.067,-0.996,-12.645),nrow = 3, byrow = T)
+  x0=matrix(c(0,0,0), nrow = 3, byrow = T)
+ x4=(-1*inv(L+D))%*%U%*%x3+inv(L+D)%*%b
+x4
+```
+```{r}
+  L=matrix(c(0.0,0.0,0.0,-2.3,0.0,0.0,-5.5,-3.2,0.0), nrow = 3, byrow = T)
+  D=matrix(c(10.2,0.0,0.0,0.0,-7.7,0.0,0.0,0.0,0.9), nrow = 3, byrow = T)
+  U=matrix(c(0.0,2.4,-4.5,0.0,0.0,11.1,0.0,0.0,0.0), nrow = 3, byrow = T)
+  b=matrix(c(14.067,-0.996,-12.645),nrow = 3, byrow = T)
+  x0=matrix(c(0,0,0), nrow = 3, byrow = T)
+  x5=(-1*inv(L+D))%*%U%*%x4+inv(L+D)%*%b
+  x5
+```
+```{r}
+  L=matrix(c(0.0,0.0,0.0,-2.3,0.0,0.0,-5.5,-3.2,0.0), nrow = 3, byrow = T)
+  D=matrix(c(10.2,0.0,0.0,0.0,-7.7,0.0,0.0,0.0,0.9), nrow = 3, byrow = T)
+  U=matrix(c(0.0,2.4,-4.5,0.0,0.0,11.1,0.0,0.0,0.0), nrow = 3, byrow = T)
+  b=matrix(c(14.067,-0.996,-12.645),nrow = 3, byrow = T)
+  x0=matrix(c(0,0,0), nrow = 3, byrow = T)
+ x6=(-1*inv(L+D))%*%U%*%x5+inv(L+D)%*%b
+x6
+```
+```{r}
+  L=matrix(c(0.0,0.0,0.0,-2.3,0.0,0.0,-5.5,-3.2,0.0), nrow = 3, byrow = T)
+  D=matrix(c(10.2,0.0,0.0,0.0,-7.7,0.0,0.0,0.0,0.9), nrow = 3, byrow = T)
+  U=matrix(c(0.0,2.4,-4.5,0.0,0.0,11.1,0.0,0.0,0.0), nrow = 3, byrow = T)
+  b=matrix(c(14.067,-0.996,-12.645),nrow = 3, byrow = T)
+  x0=matrix(c(0,0,0), nrow = 3, byrow = T)
+ x7=(-1*inv(L+D))%*%U%*%x6+inv(L+D)%*%b
+x7
+```
+```{r}
+  L=matrix(c(0.0,0.0,0.0,-2.3,0.0,0.0,-5.5,-3.2,0.0), nrow = 3, byrow = T)
+  D=matrix(c(10.2,0.0,0.0,0.0,-7.7,0.0,0.0,0.0,0.9), nrow = 3, byrow = T)
+  U=matrix(c(0.0,2.4,-4.5,0.0,0.0,11.1,0.0,0.0,0.0), nrow = 3, byrow = T)
+  b=matrix(c(14.067,-0.996,-12.645),nrow = 3, byrow = T)
+  x0=matrix(c(0,0,0), nrow = 3, byrow = T)
+  x8=(-1*inv(L+D))%*%U%*%x7+inv(L+D)%*%b
+  x8
+```
+```{r}
+  L=matrix(c(0.0,0.0,0.0,-2.3,0.0,0.0,-5.5,-3.2,0.0), nrow = 3, byrow = T)
+  D=matrix(c(10.2,0.0,0.0,0.0,-7.7,0.0,0.0,0.0,0.9), nrow = 3, byrow = T)
+  U=matrix(c(0.0,2.4,-4.5,0.0,0.0,11.1,0.0,0.0,0.0), nrow = 3, byrow = T)
+  b=matrix(c(14.067,-0.996,-12.645),nrow = 3, byrow = T)
+  x0=matrix(c(0,0,0), nrow = 3, byrow = T)
+  x9=(-1*inv(L+D))%*%U%*%x8+inv(L+D)%*%b
+  x9
+```
+```{r}
+  L=matrix(c(0.0,0.0,0.0,-2.3,0.0,0.0,-5.5,-3.2,0.0), nrow = 3, byrow = T)
+  D=matrix(c(10.2,0.0,0.0,0.0,-7.7,0.0,0.0,0.0,0.9), nrow = 3, byrow = T)
+  U=matrix(c(0.0,2.4,-4.5,0.0,0.0,11.1,0.0,0.0,0.0), nrow = 3, byrow = T)
+  b=matrix(c(14.067,-0.996,-12.645),nrow = 3, byrow = T)
+  x0=matrix(c(0,0,0), nrow = 3, byrow = T)
+  x10=(-1*inv(L+D))%*%U%*%x9+inv(L+D)%*%b
+  x10
+```
+
+  
   $\textcolor{blue}{c.}$ Solve for $e$ if the true solution is $x = (1.5, 0.33, 0.45)^{T}$.
+  
+```{r}  
+A=matrix(c(10.2,2.4,-4.5,-2.3,-7.7,11.1,-5.5,-3.2,0.9), nrow = 3, byrow = T)
+b=matrix(c(14.067,-0.996,-12.645), nrow = 3, byrow = T)
+x_bar=matrix(c(1.5, 0.33, 0.45))
+r=b-A%*%x_bar
+e_bar=inv(A)%*%r
+abs(e_bar)
+```
   
